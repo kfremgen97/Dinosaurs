@@ -1,0 +1,11 @@
+# node modules
+node_modules
+
+# mac specifc
+.DS_Store
+
+# idea specific
+.idea
+
+# distribution folder
+dist

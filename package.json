@@ -1,0 +1,26 @@
+{
+  "name": "dinosaurs",
+  "version": "1.0.0",
+  "description": "The application consist of an infographic that is derived from data that is provided via .json, as well as user input data.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfremgen97/Dinosaurs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kfremgen97/Dinosaurs/issues"
+  },
+  "homepage": "https://github.com/kfremgen97/Dinosaurs#readme",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "webpack": "^5.62.1",
+    "webpack-cli": "^4.9.1"
+  }
+}
