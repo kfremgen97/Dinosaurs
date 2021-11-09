@@ -8,10 +8,13 @@ The functionality of the application serves two purposes:
 The application consist of an infographic that is derived from data that is provided via dino.json, as well as user input data.
 The application pulls information from a form and uses it to complete an array of objects that will then be appended back to the DOM.
 
-## Design patterns used:
+### Architecture pattern used:
+- Model View Controller
+
+### Design pattern used:
 - Revealing module pattern
 
-## Technologies used:
+### Technologies used:
 - Webpack
 - SCSS
 

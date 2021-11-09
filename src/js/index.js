@@ -1,1 +1,2 @@
-  let js = 1;
+// Imports
+import './controller/homeController';
