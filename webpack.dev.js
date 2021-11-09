@@ -35,8 +35,8 @@ module.exports = {
     port: 8080,
     // The static object allows us to configure options for serving static files from directory
     // (by default 'public' directory).
-    static : {
-      directory: path.resolve(__dirname,'dist'),
+    static: {
+      directory: path.resolve(__dirname, 'dist'),
     },
     // The devMiddleWare object, this handles webpack assets on the server
     devMiddleware: {
@@ -68,22 +68,27 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
     ],
-    // Plugin configurations
-    plugins: [
+  },
+  // Plugin configurations
+  plugins: [
       // Create an instance of the plugin
       // By default, this plugin will remove all files inside webpack's output.path directory
       // as well as all unused webpack assets after every successful rebuild.
       new CleanWebpackPlugin.CleanWebpackPlugin(),
       // Copies individual files or entire directories, which already exist, to the build directory.
       new CopyWebpackPlugin({
-        // Directory to copy from
-        from: path.resolve(__dirname,'src/assets'),
-        // Directory to copy to
-        to: path.resolve(__dirname,'dist/assets'),
+        patterns: [
+          {
+            // Directory to copy from
+            from: path.resolve(__dirname, 'src/assets'),
+            // Directory to copy to
+            to: path.resolve(__dirname, 'dist/assets'),
+          },
+        ],
       }),
       // This plugin that simplifies creation of HTML files to serve your webpack bundles
       new HTMLWebpackPlugin({
@@ -99,7 +104,7 @@ module.exports = {
       // Below we pass in an object with the filename property specifying the file to extract the css into
       new MiniCssExtractPlugin({
         filename: '[name].css',
-      })
-    ]
-  }
+      }),
+    ],
 };
+
