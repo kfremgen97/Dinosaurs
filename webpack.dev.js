@@ -75,36 +75,35 @@ module.exports = {
   },
   // Plugin configurations
   plugins: [
-      // Create an instance of the plugin
-      // By default, this plugin will remove all files inside webpack's output.path directory
-      // as well as all unused webpack assets after every successful rebuild.
-      new CleanWebpackPlugin.CleanWebpackPlugin(),
-      // Copies individual files or entire directories, which already exist, to the build directory.
-      new CopyWebpackPlugin({
-        patterns: [
-          {
-            // Directory to copy from
-            from: path.resolve(__dirname, 'src/assets'),
-            // Directory to copy to
-            to: path.resolve(__dirname, 'dist/assets'),
-          },
-        ],
-      }),
-      // This plugin that simplifies creation of HTML files to serve your webpack bundles
-      new HTMLWebpackPlugin({
-        // Specify which bundle to include or hook up to the html page
-        // The string represents the chunk name which is specified as the key in the entry object
-        chunks: 'index',
-        // Specify [name] inside square brackets, tells webpack to use the key in the entry point as the name for the output file
-        filename: '[name].html',
-        // Html file to use as template
-        template: path.resolve(__dirname, 'src/index.html'),
-      }),
-      // This plugin extracts CSS into separate files.
-      // Below we pass in an object with the filename property specifying the file to extract the css into
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-      }),
-    ],
+    // Create an instance of the plugin
+    // By default, this plugin will remove all files inside webpack's output.path directory
+    // as well as all unused webpack assets after every successful rebuild.
+    new CleanWebpackPlugin.CleanWebpackPlugin(),
+    // Copies individual files or entire directories, which already exist, to the build directory.
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          // Directory to copy from
+          from: path.resolve(__dirname, 'src/assets'),
+          // Directory to copy to
+          to: path.resolve(__dirname, 'dist/assets'),
+        },
+      ],
+    }),
+    // This plugin that simplifies creation of HTML files to serve your webpack bundles
+    new HTMLWebpackPlugin({
+      // Specify which bundle to include or hook up to the html page
+      // The string represents the chunk name which is specified as the key in the entry object
+      chunks: 'index',
+      // Specify [name] inside square brackets, tells webpack to use the key in the entry point as the name for the output file
+      filename: '[name].html',
+      // Html file to use as template
+      template: path.resolve(__dirname, 'src/index.html'),
+    }),
+    // This plugin extracts CSS into separate files.
+    // Below we pass in an object with the filename property specifying the file to extract the css into
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
+  ],
 };
-
