@@ -15,7 +15,7 @@ module.exports = {
   // Each key value pair represents the point where to start the application bundling process.
   // Key = name of entry point , value = entry point file
   entry: {
-    app: path.resolve(__dirname, 'src/js/app.js'),
+    index: path.resolve(__dirname, 'src/js/index.js'),
   },
   // The output property tells webpack where to emit the bundles it creates
   // and how to name these files.
@@ -94,7 +94,7 @@ module.exports = {
       new HTMLWebpackPlugin({
         // Specify which bundle to include or hook up to the html page
         // The string represents the chunk name which is specified as the key in the entry object
-        chunks: 'app',
+        chunks: 'index',
         // Specify [name] inside square brackets, tells webpack to use the key in the entry point as the name for the output file
         filename: '[name].html',
         // Html file to use as template

@@ -1,0 +1,60 @@
+<!-- doctype -->
+<!DOCTYPE html>
+<!-- root -->
+<html>
+<!--head -->
+<head>
+    <!-- meta data: character encoding -->
+    <meta charset="UTF-8">
+    <!-- meta data: responsive view port -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!-- title -->
+    <title>Dinosaurs</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<!-- body -->
+<body class="container">
+<!-- header -->
+<header class="header">
+    <svg class="logo">
+        <use href="./assets/sprite/fa-solid.svg#paw-claws"></use>
+    </svg>
+    <h1 class="heading heading--1"> Dinosaurs</h1>
+</header>
+<!-- main -->
+<main class="main">
+    <!-- view form -->
+    <div class="view view--form">
+        <h3 class="heading heading--3">How Do You Compare?</h3>
+        <form class="form">
+            <label for="name" class="form__label">Name</label>
+            <input type="text" name="name" id="name" class="form__input form__input--name" required>
+            <label class="form__label">Height</label>
+            <label for="feet" class="form__label form__label--small">Feet</label>
+            <input type="number" name="feet" id="feet" class="form__input form__input--feet" required>
+            <label for="inch" class="form__label form__label--small">Inches</label>
+            <input type="number" name="inch" id="inch" class="form__input form__input--inch" required>
+            <label for="weight" class="form__label">Weight</label>
+            <input type="number" name="weight" id="weight" class="form__input form__input--weight" required>
+            <label for="diet" class="form__label">Diet</label>
+            <select name="diet" id="diet" class="form__select">
+                <option value="herbavore">Herbavore</option>
+                <option value="omnivore">Omnivore</option>
+                <option value="carnivore">Carnivore</option>
+            </select>
+            <button class="button button--submit">
+                Compare Me!
+            </button>
+        </form>
+
+    </div>
+</main>
+<!-- footer -->
+<footer class="footer">
+    <p class="copywright">Data Sourced from <a  class="link" href="https://www.wikipedia.org" target="_blank">Wikipedia.org</a>, all numbers are approximations.</p>
+</footer>
+</body>
+</html>
