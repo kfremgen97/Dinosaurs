@@ -1,6 +1,7 @@
 // Imports
+import dataModel from '../model/dataModel';
+import getDinos from '../service/dinoService';
 import formView from '../view/formView';
-import Person from '../model/personModel';
 
 // Validate the form data
 const validateForm = function (formData) {
@@ -24,7 +25,8 @@ const formHandler = function (formData) {
     // Validate the form Data
     validateForm(formData);
     // Create the Person
-    const person = Person(...formData.values());
+    dataModel.setPerson(...formData.values());
+    const person = dataModel.getPerson();
     console.log(person.getName(), person.getHeight(), person.getWeight(), person.getDiet());
   } catch (error) {
     // Log the error
@@ -32,5 +34,23 @@ const formHandler = function (formData) {
   }
 };
 
+// Get the dino info
+const getDinoInfo = async function() {
+  try {
+    // Get the dinos via service
+    const { Dinos: dinos } = await getDinos();
+    // Store the dino info in the model
+    dataModel.setDinos(dinos);
+    const dino = dataModel.getDinos()[0];
+    console.log(dino.getSpecies(), dino.getHeight(), dino.getWeight(),
+      dino.getWhere(), dino.getWhen(), dino.getFact());
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
 // Event listeners
 formView.addFormPublisher(formHandler);
+
+// Application set up
+getDinoInfo();

@@ -36,7 +36,7 @@ const dataModel = (function () {
     setDinos,
     getDinos,
   };
-});
+})();
 
 // Export
 export default dataModel;
