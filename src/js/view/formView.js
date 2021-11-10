@@ -1,6 +1,5 @@
 // Revealing module design pattern for formView
 const formView = (function () {
-
   const form = document.querySelector('.form');
   const nameInput = document.querySelector('.form__input--name');
   const feetInput = document.querySelector('.form__input--feet');
