@@ -6,9 +6,9 @@
 const Person = function (pName, pFeet, pInch, pWeight, pDiet) {
   // Properties
   const name = pName;
-  const feet = pFeet;
-  const inch = pInch;
-  const weight = pWeight;
+  const feet = Number(pFeet);
+  const inch = Number(pInch);
+  const weight = Number(pWeight);
   const diet = pDiet;
 
   // Methods

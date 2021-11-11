@@ -28,6 +28,11 @@ const formHandler = function (formData) {
     dataModel.setPerson(...formData.values());
     const person = dataModel.getPerson();
     console.log(person.getName(), person.getHeight(), person.getWeight(), person.getDiet());
+    // Compare human and dino, testing
+    const dino = dataModel.getDinos()[0];
+    console.log(dino.compareHeight(person.getName(), person.getHeight()));
+    console.log(dino.compareWeight(person.getName(), person.getWeight()));
+    console.log(dino.compareDiet(person.getName(), person.getDiet()));
   } catch (error) {
     // Log the error
     console.error(error);
@@ -41,6 +46,7 @@ const getDinoInfo = async function() {
     const { Dinos: dinos } = await getDinos();
     // Store the dino info in the model
     dataModel.setDinos(dinos);
+    // Dino for testing
     const dino = dataModel.getDinos()[0];
     console.log(dino.getSpecies(), dino.getHeight(), dino.getWeight(),
       dino.getWhere(), dino.getWhen(), dino.getFact());
