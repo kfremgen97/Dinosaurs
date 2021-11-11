@@ -9,3 +9,18 @@ body {
   // Set the line height to 1.6 times the font size
   line-height: 1.6;
 }
+
+/* headings */
+
+.heading {
+  font-weight: 700;
+  letter-spacing: .1rem;
+
+  &--1 {
+    font-size: 4rem;
+  }
+
+  &--white {
+    color: $white;
+  }
+}

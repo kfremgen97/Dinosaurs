@@ -18,3 +18,9 @@ html {
   // Set the root box sizing to border-box, this will cause all child elements to in herit as specified above
   box-sizing: border-box;
 }
+
+/* body element */
+
+body {
+  background-color: $white;
+}
