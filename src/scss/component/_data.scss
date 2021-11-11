@@ -1,0 +1,24 @@
+/* data */
+
+.data {
+
+  // link
+  &__link{
+
+    // link states
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $primary;
+    }
+
+    &:hover,
+    &:active {
+      color: $primary-dark;
+    }
+
+    &:focus {
+      outline-color: $primary-light;
+    }
+  }
+}
