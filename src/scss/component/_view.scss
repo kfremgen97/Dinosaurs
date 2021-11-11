@@ -1,0 +1,18 @@
+/* view */
+
+.view {
+
+  // set the view to take up its parent container
+  height: 100%;
+  width: 100%;
+
+  // form view
+  &--form {
+    // set the display to flex with a direction of column
+    display: flex;
+    flex-direction: column;
+    // center the  flex items on both axis
+    align-items: center;
+    justify-content: center;
+  }
+}

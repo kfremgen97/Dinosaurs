@@ -1,16 +1,16 @@
 /* header */
 
 .header {
-  // Set the grid area
+  // set the grid area
   grid-area: header;
-  // Set the background color
+  // set the background color
   background-color: $black;
-  // Add pading to all sides
+  // add pading to all sides
   padding: 1rem 2rem;
-  // Set the display to flex
+  // set the display to flex
   display: flex;
   flex-direction: row;
-  // Align the items in the center on the cross axis
+  // align the items in the center on the cross axis
   align-items: center;
 
 }

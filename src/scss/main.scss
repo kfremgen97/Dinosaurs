@@ -1,13 +1,15 @@
-// Base imports
+// base imports
 @import './abstract/variables';
 @import './base/base';
 @import './base/typography';
 @import './base/utiilities';
-// Layout imports
+// layout imports
 @import './layout/grid';
 @import './layout/header';
 @import './layout/main';
 @import './layout/footer';
-// Component imports
+// component imports
 @import './component/logo';
+@import './component/view';
+@import './component/form';
 @import './component/data';

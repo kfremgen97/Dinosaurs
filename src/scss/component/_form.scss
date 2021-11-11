@@ -1,0 +1,42 @@
+/* form */
+
+.form {
+  // Set the width
+  width: 75rem;
+  // Set the form to a grid with 1 column and x amount of rows
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: min-content;
+  // Set the grid gap to 2rem
+  grid-gap: 2rem;
+
+
+  &__item {
+    // set the form item to a grid with 1 column and 2 rows
+    // set the grid gap to 1rem
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2,min-content);
+
+    &--height {
+      // set 4 columns for form item height
+      grid-template-columns: min-content 1fr min-content 1fr;
+    }
+
+  }
+
+  &__label {
+    &--height {
+      // set the grid column for form label height
+      grid-column: 1/-1;
+    }
+  }
+
+  &__input {
+
+
+  }
+
+
+}

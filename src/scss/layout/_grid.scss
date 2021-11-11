@@ -1,7 +1,7 @@
 /* grid */
 
 .grid {
-  // Create a grid with 4 rows and 6 columns
+  // create a grid with 4 rows and 6 columns
   display: grid;
   grid-template-rows: min-content repeat(2,minmax(min-content,1fr)) min-content;
   grid-template-columns: 2rem repeat(4,1fr) 2rem;
@@ -10,6 +10,6 @@
                         '. main main main main .'
                         '. main main main main .'
                         'footer footer footer footer footer footer';
-  // Set the minimum height to 100viewport height
+  // set the minimum height to 100viewport height
   min-height: 100vh;
 }
