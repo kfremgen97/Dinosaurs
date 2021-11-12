@@ -22,6 +22,8 @@ const validateForm = function (formData) {
 const formHandler = function (formData) {
 
   try {
+    // Hide the error message just in case it is displayed
+    formView.hideError();
     // Validate the form Data
     validateForm(formData);
     // Create the Person
@@ -36,6 +38,8 @@ const formHandler = function (formData) {
   } catch (error) {
     // Log the error
     console.error(error);
+    // Dsiplay the error
+    formView.displayError(error.message);
   }
 };
 

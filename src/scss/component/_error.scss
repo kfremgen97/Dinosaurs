@@ -1,0 +1,12 @@
+/* error */
+
+.error {
+  color: $error;
+  text-align: center;
+  transition: all .2s;
+
+  &--hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

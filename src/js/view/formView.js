@@ -1,6 +1,7 @@
 // Revealing module design pattern for formView
 const formView = (function () {
   const form = document.querySelector('.form');
+  const error = document.querySelector('p.error');
   const nameInput = document.querySelector('.form__input--name');
   const feetInput = document.querySelector('.form__input--feet');
   const inchInput = document.querySelector('.form__input--inch');
@@ -20,9 +21,20 @@ const formView = (function () {
     });
   }
 
+  function displayError(message) {
+    error.textContent = message;
+    error.classList.remove('error--hidden');
+  }
+  
+  function hideError() {
+    error.classList.add('error--hidden');
+  }
+
   // Properties and methods to make public
   return {
     addFormPublisher,
+    displayError,
+    hideError,
   };
 }());
 
