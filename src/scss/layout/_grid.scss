@@ -1,6 +1,7 @@
 /* grid */
 
 .grid {
+  background-image: linear-gradient(to bottom right, $primary-light, $primary-dark);
   // create a grid with 4 rows and 6 columns
   display: grid;
   grid-template-rows: min-content repeat(2,minmax(min-content,1fr)) min-content;

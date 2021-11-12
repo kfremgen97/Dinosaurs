@@ -1,0 +1,26 @@
+/* button */
+
+.button {
+  // set the font family to match rest of page
+  font-family: inherit;
+  font-weight: inherit;
+  // set the background and font color
+  background-color: $primary;
+  color: $white;
+  // add padding
+  padding: 1rem 2rem;
+  // create a border radius
+  border: none;
+  border-radius: .5rem;
+
+  // button states
+
+  &:hover,
+  &:active {
+    background-color: $primary-dark;
+  }
+
+  &:focus {
+    outline-color: $primary-light;
+  }
+}
