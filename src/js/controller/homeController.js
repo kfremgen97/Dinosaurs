@@ -38,7 +38,7 @@ const formHandler = function (formData) {
   } catch (error) {
     // Log the error
     console.error(error);
-    // Dsiplay the error
+    // Display the error
     formView.displayError(error.message);
   }
 };

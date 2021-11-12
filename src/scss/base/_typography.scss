@@ -32,4 +32,9 @@ body {
     color: $primary;
     justify-self: center;
   }
+
+  &--error {
+    color: $error;
+    justify-self: center;
+  }
 }

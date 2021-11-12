@@ -1,7 +1,7 @@
 // Revealing module design pattern for formView
 const formView = (function () {
   const form = document.querySelector('.form');
-  const error = document.querySelector('p.error');
+  const heading = document.querySelector('.heading--form');
   const nameInput = document.querySelector('.form__input--name');
   const feetInput = document.querySelector('.form__input--feet');
   const inchInput = document.querySelector('.form__input--inch');
@@ -22,12 +22,13 @@ const formView = (function () {
   }
 
   function displayError(message) {
-    error.textContent = message;
-    error.classList.remove('error--hidden');
+    heading.textContent = message;
+    heading.classList.add('heading--error');
   }
   
   function hideError() {
-    error.classList.add('error--hidden');
+    heading.classList.remove('heading--error');
+    heading.textContent = 'How do you compare?';
   }
 
   // Properties and methods to make public
