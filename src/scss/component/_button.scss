@@ -1,26 +1,57 @@
 /* button */
 
 .button {
+  display: inline-block;
   // set the font family to match rest of page
   font-family: inherit;
   font-weight: inherit;
-  // set the background and font color
-  background-color: $primary;
-  color: $white;
-  // add padding
-  padding: 1rem 2rem;
   // create a border radius
   border: none;
   border-radius: .5rem;
+  cursor: pointer;
 
-  // button states
+  // button form
+  &--form {
+    // set the background and font color
+    background-color: $primary;
+    color: $white;
+    // add padding
+    padding: 1rem 2rem;
 
-  &:hover,
-  &:active {
-    background-color: $primary-dark;
+    // button states
+    &:hover,
+    &:active {
+      background-color: $primary-dark;
+    }
+
+    &:focus {
+      outline-color: $primary-light;
+    }
   }
 
-  &:focus {
-    outline-color: $primary-light;
+  // back button
+  &--back {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background: transparent;
+    justify-self: start;
+    padding:0;
+
+    & svg {
+      display: inline-block;
+      height:2rem;
+      width: 2rem;
+      fill: $primary;
+    }
+
+    // button states
+    &:hover svg,
+    &:active svg {
+      fill: $primary-dark;
+    }
+
+    &:focus {
+      outline-color: $primary-light;
+    }
   }
 }

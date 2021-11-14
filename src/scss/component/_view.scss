@@ -1,20 +1,33 @@
 /* view */
 
 .view {
-
-  height: 100%;
+  // set the background color
+  background: $white;
+  // set the height and width
+  height:100%;
   width: 100%;
 
   // form view
   &--form {
-    // set the display to a grid with 3 rows and 1 column
+    // set the display to a grid with 3 rows and 3 column
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 90rem 1fr;
     grid-template-rows: 1fr min-content 1fr;
     // set the gap between each row and column
     grid-gap: 2rem;
     // justify the items on the horizontal axis to center
     justify-items: center;
+  }
 
+  // card view
+  &--cards {
+    // set the display to a grid with 4 rows and 3 column
+    display: grid;
+    grid-template-columns: 1fr 90rem 1fr;
+    grid-template-rows: 1fr repeat(2,min-content) 1fr;
+    // set the gap between each row and column
+    grid-gap: 2rem;
+    // justify the items on the horizontal axis to center
+    justify-items: center;
   }
 }

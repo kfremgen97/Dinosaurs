@@ -1,0 +1,28 @@
+/* cards */
+
+.cards {
+  // set the width to 100% its parent
+  width: 100%;
+  background-color: $grey;
+  border-radius: .5rem;
+  padding: 2rem;
+  // set the grid item row and column placement
+  grid-row: 3/4;
+  grid-column: 2/3;
+  // remove any list styles
+  list-style: none;
+
+  // create a grid by a dynamic amount of rows and columns
+  display:grid;
+  //For the columns we use the repeat(auto-fit,minmax(25rem,1fr) function
+  //We specify the columns to repeat  while auto fitting with a minmax function via repeat function
+  //The auto-fit keyword tell the browser to handle the column sizing and element wrapping for us, so that the elements will
+  //wrap into rows when the width is not large enough to fit them in without any overflow.
+  //Set the columns width via minmax function() which allows us to specify the min and max width of the column.
+  //We set the min-width to 25rem and the max width to 1 available unit of free space
+  //The fraction unit(1fr) we used also ensures that, in case the width allows for a fraction of a column to fit but not a full column,
+  //that space will instead be distributed over the column or columns that already fit, making sure we aren’t left with any empty space at the end of the row.
+  grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+  grid-auto-rows: min-content;
+  grid-gap: 2rem;
+}
