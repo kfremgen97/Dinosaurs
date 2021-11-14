@@ -17,6 +17,10 @@
     grid-gap: 2rem;
     // justify the items on the horizontal axis to center
     justify-items: center;
+
+    @media only screen and (max-width: $tablet-large){
+      grid-template-columns: 1fr;
+    }
   }
 
   // card view

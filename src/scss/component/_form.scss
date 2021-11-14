@@ -31,6 +31,13 @@
     &--height {
       // set 4 columns for form item height
       grid-template-columns: min-content 1fr min-content 1fr;
+
+
+      /* media query for height input*/
+      @media only screen and (max-width: $phone-small){
+        // set 2columns for form item height
+        grid-template-columns: min-content 1fr;
+      }
     }
 
   }
@@ -52,6 +59,8 @@
   }
 
   &__input {
+    // set the min width
+    min-width: 15rem;
     // add padding and a border radius
     padding: .5rem 1rem;
     border: none;
@@ -71,5 +80,13 @@
     &:focus {
       outline-color: $primary-light;
     }
+  }
+
+  /* media query for form */
+  @media only screen and (max-width: $tablet-large){
+    // remove
+    box-shadow: none;
+    // span all columns
+    grid-column: 1/-1;
   }
 }

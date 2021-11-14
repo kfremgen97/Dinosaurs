@@ -13,4 +13,24 @@
                         'footer footer footer footer footer footer';
   // set the minimum height to 100viewport height
   min-height: 100vh;
+
+  /* media query for grid*/
+  @media only screen and (max-width:$phone) {
+    // set the grid area
+    grid-template-areas: 'header header header header header header'
+                        'main main main main main main'
+                        'main main main main main main'
+                        'footer footer footer footer footer footer';
+  }
+
+  /* media query for grid*/
+  @media only screen and (min-width:$desktop-large) {
+    // update the grid columns
+    grid-template-columns:1fr repeat(4,30rem) 1fr;
+    // set the grid area
+    grid-template-areas: 'header header header header header header'
+                        '. main main main main .'
+                        '. main main main main .'
+                        'footer footer footer footer footer footer';
+  }
 }
