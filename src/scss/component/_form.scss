@@ -18,6 +18,11 @@
   // Set the grid gap to 2rem
   grid-gap: 2rem;
 
+  &--hidden {
+    // hide the form
+    display: none;
+  }
+
   &__item {
     // set the form item to a grid with 1 column and 2 rows
     // set the grid gap to 1rem
@@ -79,6 +84,8 @@
       outline-color: $primary-light;
     }
   }
+
+
 
   /* media query for form */
   @media only screen and (max-width: $tablet-large){

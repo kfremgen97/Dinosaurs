@@ -21,6 +21,14 @@ const formView = (function () {
     });
   }
 
+  function displayForm() {
+    form.classList.remove('form--hidden')
+  }
+  
+  function hideForm() {
+    form.classList.add('form--hidden')
+  }
+  
   function displayError(message) {
     heading.textContent = message;
     heading.classList.add('heading--error');
@@ -34,6 +42,8 @@ const formView = (function () {
   // Properties and methods to make public
   return {
     addFormPublisher,
+    displayForm,
+    hideForm,
     displayError,
     hideError,
   };

@@ -28,13 +28,16 @@ const formHandler = function (formData) {
     validateForm(formData);
     // Create the Person
     dataModel.setPerson(...formData.values());
-    const person = dataModel.getPerson();
-    console.log(person.getName(), person.getHeight(), person.getWeight(), person.getDiet());
+    // const person = dataModel.getPerson();
+    // console.log(person.getName(), person.getHeight(), person.getWeight(), person.getDiet());
     // Compare human and dino, testing
-    const dino = dataModel.getDinos()[0];
-    console.log(dino.compareHeight(person.getName(), person.getHeight()));
-    console.log(dino.compareWeight(person.getName(), person.getWeight()));
-    console.log(dino.compareDiet(person.getName(), person.getDiet()));
+    // const dino = dataModel.getDinos()[0];
+    // console.log(dino.compareHeight(person.getName(), person.getHeight()));
+    // console.log(dino.compareWeight(person.getName(), person.getWeight()));
+    // console.log(dino.compareDiet(person.getName(), person.getDiet()));
+    // Hide the form
+    formView.hideForm();
+
   } catch (error) {
     // Log the error
     console.error(error);
