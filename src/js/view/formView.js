@@ -8,9 +8,8 @@ const formView = (function () {
   const inchInput = document.querySelector('.form__input--inch');
   const weightInput = document.querySelector('.form__input--weight');
   const dietSelect = document.querySelector('.form__select--diet');
-  const submitButton = document.querySelector('.button--submit');
 
-  function addFormPublisher(formHandler) {
+  const addFormPublisher = function (formHandler) {
     // Add event listener on form submit
     form.addEventListener('submit', (event) => {
       // Prevent default
@@ -22,20 +21,33 @@ const formView = (function () {
     });
   }
 
-  function displayForm() {
+  // Clear form inputs
+  const clearForm = function () {
+    nameInput.value = '';
+    feetInput.value = '';
+    inchInput.value = '';
+    weightInput.value = '';
+    dietSelect.value = 'herbavor';
+  }
+
+  // Show the form view
+  const showView = function () {
     view.classList.remove('view--hidden')
   }
-  
-  function hideForm() {
+
+  // Hide the form view
+  const hideView = function () {
     view.classList.add('view--hidden')
   }
-  
-  function displayError(message) {
+
+  // Show the form error
+  const showError = function (message) {
     heading.textContent = message;
     heading.classList.add('heading--error');
   }
-  
-  function hideError() {
+
+  // Hide the form error
+  const hideError = function () {
     heading.classList.remove('heading--error');
     heading.textContent = 'How do you compare?';
   }
@@ -43,9 +55,10 @@ const formView = (function () {
   // Properties and methods to make public
   return {
     addFormPublisher,
-    displayForm,
-    hideForm,
-    displayError,
+    clearForm,
+    showView,
+    hideView,
+    showError,
     hideError,
   };
 }());

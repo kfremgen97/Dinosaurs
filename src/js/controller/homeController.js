@@ -29,8 +29,9 @@ const formHandler = function (formData) {
     validateForm(formData);
     // Create the Person
     dataModel.setPerson(...formData.values());
+    formView.clearForm();
     // Hide the form
-    formView.hideForm();
+    formView.hideView();
     // Show the cards view
     cardsView.showView();
     // Generate the cards
@@ -41,7 +42,7 @@ const formHandler = function (formData) {
     // Log the error
     console.error(error);
     // Display the error
-    formView.displayError(error.message);
+    formView.showError(error.message);
   }
 };
 
@@ -63,7 +64,7 @@ const getDinoInfo = async function() {
 
 const backHandler = function () {
   cardsView.hideView();
-  formView.displayForm();
+  formView.showView();
 }
 
 // Event listeners
