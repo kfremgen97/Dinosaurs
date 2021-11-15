@@ -53,5 +53,12 @@
     &:focus {
       outline-color: $primary-light;
     }
+
+    /* media query for back button*/
+    @media only screen and (max-width: $tablet-large){
+      // span all columns
+      grid-column: 1/-1;
+      margin-left: 2rem;
+    }
   }
 }

@@ -2,7 +2,7 @@
 
 .card {
   // create a linear gradiant as a background
-  background-image: linear-gradient(to bottom right, $primary-light,$primary-dark);
+  background-color: $white;
   // add padding to the card
   padding: 1rem;
   // create a border with a radius of .5rem
@@ -35,4 +35,6 @@
     // set the text to lowercase
     text-transform: lowercase;
   }
+
+
 }

@@ -7,9 +7,10 @@
   background-color: $black;
   // add pading to all sides
   padding: 1rem 2rem;
-  // set the display to flex
+  // set the display to flex with a direction of row
   display: flex;
   flex-direction: row;
+  flex-wrap:wrap;
   // align the items in the center on the cross axis
   align-items: center;
 
