@@ -50,29 +50,29 @@ const Dino = function (
 
     // Check for human less than, greater than, or same height as dino
     if (height > humanInches) {
-      return `${species} is ${(height / humanInches).toFixed(2)} times taller than ${humanName}!`;
+      return `${species} is ${(height / humanInches).toFixed(2)} times taller than ${humanName}`;
     }
     if (humanInches > height) {
-      return `${humanName} is ${(humanInches / height).toFixed(2)} times taller than ${species}!`;
+      return `${humanName} is ${(humanInches / height).toFixed(2)} times taller than ${species}`;
     }
-    return `${humanName} and ${species} are the same height!`;
+    return `${humanName} and ${species} are the same height`;
   };
 
   const compareWeight = function (humanName, humanWeight) {
     // Check for human less than, greater than, or same weight as dino
     if (weight > humanWeight) {
-      return `${species} is ${(weight / humanWeight).toFixed(2)} times heavier than ${humanName}!`;
+      return `${species} is ${(weight / humanWeight).toFixed(2)} times heavier than ${humanName}`;
     }
     if (humanWeight > weight) {
-      return `${humanName} is ${(humanWeight / weight).toFixed(2)} times heavier than ${species}!`;
+      return `${humanName} is ${(humanWeight / weight).toFixed(2)} times heavier than ${species}`;
     }
-    return `${humanName} and ${species} are the same weight!`;
+    return `${humanName} and ${species} are the same weight`;
   };
 
   const compareDiet = function (humanName, humanDiet) {
     // Compare diets
-    if (humanDiet === diet) return `${humanName} and ${species} are both ${humanDiet}.`;
-    return `${humanName} is a(n) ${humanDiet},while ${species} is a(n) ${diet}.`;
+    if (humanDiet === diet) return `${humanName} and ${species} are both ${humanDiet}`;
+    return `${humanName} is a(n) ${humanDiet},while ${species} is a(n) ${diet}`;
   };
 
   // Return and object with the methods we want to allow to be public

@@ -5,7 +5,20 @@ const cardsView = (function() {
   const cards = document.querySelector('.cards');
   const backButton = document.querySelector('.button--back');
 
-  function generateFact(num,dino) {
+  function generateFact(num,person,dino) {
+
+   if(dino.getSpecies().toLowerCase() === 'pigeon') return dino.getFact();
+
+    switch (num) {
+      case 1:
+        return dino.compareHeight(person.getName(), person.getHeight());
+      case 2:
+        return dino.compareWeight(person.getName(),person.getWeight());
+      case 3:
+       return dino.compareDiet(person.getName(), person.getDiet());
+      default:
+       return dino.getFact();
+    }
 
   }
 
@@ -31,7 +44,7 @@ const cardsView = (function() {
            <li class="card">
                 <img class="card__img" src ="./assets/img/${dino.getSpecies().replaceAll(' ','-')}.png" alt="${dino.getSpecies()}">
                 <p class="card__name">${dino.getSpecies()}</p>
-                <p class="card__fact">${dino.getFact().replaceAll('.','')}</p>
+                <p class="card__fact">${generateFact(num,person,dino).replaceAll('.','')}</p>
             </li>
             `;
       // Add to the card string
@@ -60,7 +73,7 @@ const cardsView = (function() {
            <li class="card">
                 <img class="card__img" src ="./assets/img/${dino.getSpecies().replaceAll(' ','-')}.png" alt="${dino.getSpecies()}">
                 <p class="card__name">${dino.getSpecies()}</p>
-                <p class="card__fact">${dino.getFact().replaceAll('.','')}</p>
+                <p class="card__fact">${generateFact(num,person,dino).replaceAll('.','')}</p>
             </li>
             `;
       // Add to the card string
