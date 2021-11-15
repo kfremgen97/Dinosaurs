@@ -10,8 +10,6 @@
   background-color: $grey;
   // add padding
   padding: 2rem;
-  // create a border radius and a box shadow
-  box-shadow: 2rem 2rem 2rem $black;
   border-radius: .5rem;
   // Set the form to a grid with 1 column and x amount of rows
   display: grid;
@@ -84,8 +82,6 @@
 
   /* media query for form */
   @media only screen and (max-width: $tablet-large){
-    // remove
-    box-shadow: none;
     // span all columns
     grid-column: 1/-1;
   }
