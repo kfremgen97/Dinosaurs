@@ -1,5 +1,6 @@
 // Revealing module design pattern for formView
 const formView = (function () {
+  const view = document.querySelector('.view--form');
   const form = document.querySelector('.form');
   const heading = document.querySelector('.heading--form');
   const nameInput = document.querySelector('.form__input--name');
@@ -22,11 +23,11 @@ const formView = (function () {
   }
 
   function displayForm() {
-    form.classList.remove('form--hidden')
+    view.classList.remove('view--hidden')
   }
   
   function hideForm() {
-    form.classList.add('form--hidden')
+    view.classList.add('view--hidden')
   }
   
   function displayError(message) {

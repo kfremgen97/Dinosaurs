@@ -2,6 +2,7 @@
 import dataModel from '../model/dataModel';
 import getDinos from '../service/dinoService';
 import formView from '../view/formView';
+import cardsView from '../view/cardsView';
 
 // Validate the form data
 const validateForm = function (formData) {
@@ -28,15 +29,13 @@ const formHandler = function (formData) {
     validateForm(formData);
     // Create the Person
     dataModel.setPerson(...formData.values());
-    // const person = dataModel.getPerson();
-    // console.log(person.getName(), person.getHeight(), person.getWeight(), person.getDiet());
-    // Compare human and dino, testing
-    // const dino = dataModel.getDinos()[0];
-    // console.log(dino.compareHeight(person.getName(), person.getHeight()));
-    // console.log(dino.compareWeight(person.getName(), person.getWeight()));
-    // console.log(dino.compareDiet(person.getName(), person.getDiet()));
     // Hide the form
     formView.hideForm();
+    // Show the cards view
+    cardsView.showView();
+    // Generate the cards
+    cardsView.generateCards(dataModel.getPerson(), dataModel.getDinos())
+
 
   } catch (error) {
     // Log the error
@@ -54,9 +53,9 @@ const getDinoInfo = async function() {
     // Store the dino info in the model
     dataModel.setDinos(dinos);
     // Dino for testing
-    const dino = dataModel.getDinos()[0];
-    console.log(dino.getSpecies(), dino.getHeight(), dino.getWeight(),
-      dino.getWhere(), dino.getWhen(), dino.getFact());
+    // const dino = dataModel.getDinos()[0];
+    // console.log(dino.getSpecies(), dino.getHeight(), dino.getWeight(),
+    //   dino.getWhere(), dino.getWhen(), dino.getFact());
   } catch (error) {
     alert(error.message);
   }

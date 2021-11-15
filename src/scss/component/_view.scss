@@ -38,4 +38,9 @@
       grid-template-columns: 1fr;
     }
   }
+
+  &--hidden {
+    // hide the view
+    display: none;
+  }
 }
