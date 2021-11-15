@@ -4,6 +4,14 @@ const cardsView = (function() {
   const view = document.querySelector('.view--cards');
   const cards = document.querySelector('.cards');
   const backButton = document.querySelector('.button--back');
+  
+  function addBackPublisher(handler) {
+    backButton.addEventListener('click', (event) => {
+      // Prevent default action
+      event.preventDefault();
+      handler();
+    })
+  }
 
   function generateFact(num,person,dino) {
 
@@ -99,6 +107,7 @@ const cardsView = (function() {
 
   // Properties and methods to make public
   return {
+    addBackPublisher,
     showView,
     hideView,
     generateCards,

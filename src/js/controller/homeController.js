@@ -61,8 +61,14 @@ const getDinoInfo = async function() {
   }
 };
 
+const backHandler = function () {
+  cardsView.hideView();
+  formView.displayForm();
+}
+
 // Event listeners
 formView.addFormPublisher(formHandler);
+cardsView.addBackPublisher(backHandler)
 
 // Application set up
 getDinoInfo();
