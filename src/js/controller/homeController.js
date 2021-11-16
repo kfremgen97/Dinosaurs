@@ -36,8 +36,6 @@ const formHandler = function (formData) {
     cardsView.showView();
     // Generate the cards
     cardsView.generateCards(dataModel.getPerson(), dataModel.getDinos())
-
-
   } catch (error) {
     // Log the error
     console.error(error);
@@ -62,6 +60,7 @@ const getDinoInfo = async function() {
   }
 };
 
+// Handle back button
 const backHandler = function () {
   cardsView.hideView();
   formView.showView();
