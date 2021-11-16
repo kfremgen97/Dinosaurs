@@ -52,9 +52,9 @@ const getDinoInfo = async function() {
     // Store the dino info in the model
     dataModel.setDinos(dinos);
     // Dino for testing
-    // const dino = dataModel.getDinos()[0];
-    // console.log(dino.getSpecies(), dino.getHeight(), dino.getWeight(),
-    //   dino.getWhere(), dino.getWhen(), dino.getFact());
+    const dino = dataModel.getDinos()[0];
+    console.log(dino.getSpecies(), dino.getHeight(), dino.getWeight(),
+     dino.getWhere(), dino.getWhen(), dino.getFact());
   } catch (error) {
     alert(error.message);
   }

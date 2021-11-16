@@ -15,6 +15,7 @@ const cardsView = (function () {
 
   // Generate dino fact
   const generateFact = function (num, person, dino) {
+    console.log('fact:', dino.getSpecies())
 
     // If dino is pigeon return fact
     if (dino.getSpecies().toLowerCase() === 'pigeon') return dino.getFact();
@@ -33,7 +34,7 @@ const cardsView = (function () {
   }
 
   // Generate dino card string
-  const generateDinoCard = function (person, dino) {
+  const generateDinoCard = function (num,person, dino) {
     return `  
      <li class="card">
         <img class="card__img" src ="./assets/img/${dino.getSpecies().replaceAll(' ', '-')}.png" alt="${dino.getSpecies()}">
@@ -47,9 +48,9 @@ const cardsView = (function () {
   // Generate person card string
   const generatePersonCard = function (person) {
     return `
-    <li className="card">
-        <img className="card__img" src="./assets/img/human.png" alt="${person.getName()}">
-        <p className="card__name">${person.getName()}</p>
+    <li class="card">
+        <img class="card__img" src="./assets/img/human.png" alt="${person.getName()}">
+        <p class="card__name">${person.getName()}</p>
     </li>
     `;
   }
