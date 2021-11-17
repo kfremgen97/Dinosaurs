@@ -37,8 +37,6 @@ const formHandler = function (formData) {
     // Generate the cards
     cardsView.generateCards(dataModel.getPerson(), dataModel.getDinos())
   } catch (error) {
-    // Log the error
-    console.error(error);
     // Display the error
     formView.showError(error.message);
   }
@@ -51,10 +49,6 @@ const getDinoInfo = async function() {
     const { Dinos: dinos } = await getDinos();
     // Store the dino info in the model
     dataModel.setDinos(dinos);
-    // Dino for testing
-    const dino = dataModel.getDinos()[0];
-    console.log(dino.getSpecies(), dino.getHeight(), dino.getWeight(),
-     dino.getWhere(), dino.getWhen(), dino.getFact());
   } catch (error) {
     alert(error.message);
   }

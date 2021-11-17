@@ -15,8 +15,6 @@ const cardsView = (function () {
 
   // Generate dino fact
   const generateFact = function (num, person, dino) {
-    console.log('fact:', dino.getSpecies())
-
     // If dino is pigeon return fact
     if (dino.getSpecies().toLowerCase() === 'pigeon') return dino.getFact();
 

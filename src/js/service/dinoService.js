@@ -4,11 +4,10 @@ const getDinos = function () {
       if (!response.ok) throw new Error('Unable to read dinos');
       return response.json();
     }).then((data) => {
-      console.log(data);
       return data;
     })
     .catch((error) => {
-      console.error(error);
+      throw error;
     });
 };
 
