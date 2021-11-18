@@ -14,7 +14,6 @@ The application pulls information from a form and uses it to complete an array o
 
 ### Design pattern used:
 - Revealing module pattern
-- Factory function pattern
 
 ### Technologies used:
 - Webpack

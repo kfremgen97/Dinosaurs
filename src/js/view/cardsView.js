@@ -1,12 +1,15 @@
-// Revealing module design pattern for cardsView
-const cardsView = (function () {
-  // Properties
-  const view = document.querySelector('.view--cards');
-  const cards = document.querySelector('.cards');
-  const backButton = document.querySelector('.button--back');
+// CardsView Class
+class CardsView {
+  // constructor
+  constructor() {
+    this.view = document.querySelector('.view--cards');
+    this.cards = document.querySelector('.cards');
+    this.backButton = document.querySelector('.button--back');
+  }
 
-  const addBackPublisher = function (handler) {
-    backButton.addEventListener('click', (event) => {
+  // Add back publisher
+  addBackPublisher(handler) {
+    this.backButton.addEventListener('click', (event) => {
       // Prevent default action
       event.preventDefault();
       handler();
@@ -14,7 +17,7 @@ const cardsView = (function () {
   }
 
   // Generate dino fact
-  const generateFact = function (num, person, dino) {
+  generateFact(num, person, dino) {
     // If dino is pigeon return fact
     if (dino.getSpecies().toLowerCase() === 'pigeon') return dino.getFact();
 
@@ -32,19 +35,18 @@ const cardsView = (function () {
   }
 
   // Generate dino card string
-  const generateDinoCard = function (num,person, dino) {
+  generateDinoCard(num, person, dino) {
     return `  
      <li class="card">
         <img class="card__img" src ="./assets/img/${dino.getSpecies().replaceAll(' ', '-')}.png" alt="${dino.getSpecies()}">
         <p class="card__name">${dino.getSpecies()}</p>
-        <p class="card__fact">${generateFact(num, person, dino).replaceAll('.', '')}</p>
+        <p class="card__fact">${this.generateFact(num, person, dino).replaceAll('.', '')}</p>
      </li>
       `;
-
   }
 
   // Generate person card string
-  const generatePersonCard = function (person) {
+  generatePersonCard(person) {
     return `
     <li class="card">
         <img class="card__img" src="./assets/img/human.png" alt="${person.getName()}">
@@ -54,7 +56,7 @@ const cardsView = (function () {
   }
 
   // Generate teh acrds to be shown
-  const generateCards = function (person, dinos) {
+  generateCards(person, dinos) {
     let cardsString = '';
 
     // From 0-3 generate random card and fact
@@ -63,14 +65,15 @@ const cardsView = (function () {
       const num = Math.floor(Math.random() * 4);
       // Get the dino
       const dino = dinos[i];
+      console.log(dino);
       // Generate the card string
-      const cardString = generateDinoCard(num, person, dino);
+      const cardString = this.generateDinoCard(num, person, dino);
       // Add to the cards string
       cardsString += cardString;
     }
 
     // Generate person stirng
-    const personString = generatePersonCard(person);
+    const personString = this.generatePersonCard(person);
     // Add to the cards string
     cardsString += personString;
 
@@ -81,37 +84,30 @@ const cardsView = (function () {
       // Get the dino
       const dino = dinos[i];
       // Generate the card string
-      const cardString = generateDinoCard(num, person, dino);
+      const cardString = this.generateDinoCard(num, person, dino);
       // Add to the cards string
       cardsString += cardString;
     }
 
+    console.log(cardsString);
     // Clear the cards
-    cards.innerHTML = '';
+    this.cards.innerHTML = '';
     // Add new cards
-    cards.insertAdjacentHTML('afterbegin', cardsString);
+    this.cards.insertAdjacentHTML('afterbegin', cardsString);
+    console.log(50);
   }
 
 
   // Hide the view
-  const hideView = function () {
-    view.classList.add('view--hidden');
+  hideView() {
+    this.view.classList.add('view--hidden');
   }
 
   // Show the view
-  const showView = function () {
-    view.classList.remove('view--hidden');
+  showView() {
+    this.view.classList.remove('view--hidden');
   }
-
-  // Properties and methods to make public
-  return {
-    addBackPublisher,
-    showView,
-    hideView,
-    generateCards,
-  }
-
-})();
+};
 
 // Default export
-export default cardsView;
+export default new CardsView();
