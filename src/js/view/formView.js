@@ -55,7 +55,6 @@ class FormView {
     this.heading.classList.remove('heading--error');
     this.heading.textContent = 'How do you compare?';
   }
-
 }
 
 // Default export

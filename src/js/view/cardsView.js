@@ -65,7 +65,6 @@ class CardsView {
       const num = Math.floor(Math.random() * 4);
       // Get the dino
       const dino = dinos[i];
-      console.log(dino);
       // Generate the card string
       const cardString = this.generateDinoCard(num, person, dino);
       // Add to the cards string
@@ -89,12 +88,10 @@ class CardsView {
       cardsString += cardString;
     }
 
-    console.log(cardsString);
     // Clear the cards
     this.cards.innerHTML = '';
     // Add new cards
     this.cards.insertAdjacentHTML('afterbegin', cardsString);
-    console.log(50);
   }
 
 
@@ -107,7 +104,7 @@ class CardsView {
   showView() {
     this.view.classList.remove('view--hidden');
   }
-};
+}
 
 // Default export
 export default new CardsView();
